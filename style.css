@@ -1,0 +1,523 @@
+@font-face{
+    src: url('files/Gameplay.ttf');
+    font-family: Game-Of-Squids;
+} 
+
+
+html{
+    overflow-x: hidden;
+}
+
+:root{
+    --violet:rgb(197, 3, 214);
+    --light-violet:rgb(188, 99, 240);
+    --sky:  rgb(99, 235, 240)
+}
+
+*::-webkit-scrollbar{
+    width: .5rem;
+}
+
+*::-webkit-scrollbar-track{
+    background: none;
+}
+*::-webkit-scrollbar-thumb{
+    background:var(--violet);
+    border-radius: .5rem;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: Game-Of-Squids, sans-serif;
+    transition: all .3s linear;
+    letter-spacing: .1rem;
+    font-weight: bold;
+}
+
+.bg-img{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    min-height: 100vh;
+    background:url('img/pattern4.jpg');
+    /* background-size:100% 100% ; */
+    background-repeat: repeat;
+    /* filter: blur(.1rem); */
+}
+
+
+.btn{
+    background-color:rgba(125, 222, 252, 0.5);
+    padding: .7rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+.btn:hover{
+    box-shadow: 0 0 1rem var(--sky),
+                0 0 1.5rem var(--sky);
+    color: var(--sky);
+    background-color:rgba(0, 0, 0, 0.5);
+}
+
+
+.btn2{
+    background-color:rgba(216, 125, 252, 0.5);
+    padding: .7rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+.btn2:hover{
+    box-shadow: 0 0 1rem var(--violet),
+                0 0 1.5rem var(--violet);
+    color: var(--violet);
+    background-color:rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* --------header---------------- */
+
+
+header{
+    padding: 1rem 1%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .copyright{
+    color: var(--light-violet);
+    font-size: .6rem;
+    animation: lighting-span 1s ease-in infinite;
+}
+
+@keyframes lighting-span {
+    0%{text-shadow: 0 0 1.5rem var(--light-violet);}
+    50%{text-shadow:0 0 1rem var(--light-violet),
+                    0 0 1.5rem var(--light-violet);}
+    100%{text-shadow:0 0 1.5rem var(--light-violet);}
+}
+
+
+
+
+header .logo{
+    text-shadow: 0 0 1rem var(--sky);
+    font-size: 3rem;
+    color: rgb(100, 247, 203);
+    animation: lighting .3s ease-in-out infinite;
+    letter-spacing: .5rem;
+}
+
+@keyframes lighting {
+    0%{text-shadow: 0 0 1.5rem var(--sky),
+                    0 0 2em var(--sky);}
+    50%{text-shadow:0 0 1.5rem var(--sky),
+                    0 0 2em var(--sky),
+                    0 0 2.5em var(--sky);}
+    100%{text-shadow:0 0 1.5rem var(--sky),
+                    0 0 2em var(--sky);}
+}
+
+
+
+header .controls{
+    font-size: 1rem;
+    color: var(--sky);
+    display: flex;
+    align-items: center;
+}
+
+header .controls .lang{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    background-color:rgba(0, 0, 0, 0.5);
+    border-radius: .5rem;
+    padding: .2rem .5rem .2rem 0;
+}
+
+header .controls .lang.passive{
+    opacity: .4;
+    cursor: default;
+}
+
+header .controls .lang span{
+    margin-left: .5rem;
+    cursor: pointer;
+}
+
+header .controls .lang span.active{
+    background-color:rgba(125, 222, 252, 0.5);
+    border-radius: .5rem;
+    padding: .5rem;
+}
+
+header .controls .music-btn{
+    margin:0 1rem;
+}
+
+/* --------menu---------------- */
+
+.menu{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+    padding: 2rem 10%;
+}
+
+.menu .box1,
+.menu .box2,
+.menu .single-control,
+.menu .group-control{
+    width: 35%;
+    height: 60vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: .5rem;
+    text-align: center;
+    position: relative;
+    animation: inpshow .5s ease-out;
+}
+
+
+.menu .box1 i,
+.menu .box2 i{
+  font-size: 10rem;
+  display: block;
+  margin: 3rem 0 5rem 0;
+}
+.menu .box1 i{
+    color: var(--sky);
+    animation: lighting-single 1s ease-in infinite;
+}
+@keyframes lighting-single {
+    0%{text-shadow: 0 0 1.5rem var(--sky);}
+    50%{text-shadow:0 0 .5rem var(--sky),
+                    0 0 1.5rem var(--sky);}
+    100%{text-shadow:0 0 1.5rem var(--sky);}
+}
+
+.menu .box2 i{
+    color: var(--violet);
+    animation: lighting-group 1s ease-in infinite;
+}
+@keyframes lighting-group {
+    0%{text-shadow: 0 0 1.5rem var(--violet);}
+    50%{text-shadow:0 0 .5rem var(--violet),
+                    0 0 1.5rem var(--violet);}
+    100%{text-shadow:0 0 1.5rem var(--violet);}
+}
+
+
+.menu .box1 .btn,
+.menu .box2 .btn2{
+    font-size: 1.7rem;
+}
+
+.menu .box1.active{
+    display: none;
+}
+
+
+.menu .box2.active{
+    display: none; 
+} 
+
+/* --------single control------------ */
+
+.menu .single-control{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+}
+
+.menu .single-control.active{
+    display: flex;
+}
+
+.menu .single-control label{
+    color: var(--sky);
+    font-size: 1.5rem;
+}
+.menu .single-control input[type=text]{
+    font-size: 1rem;
+    padding: .5rem;
+    border-radius: .5rem;
+    background: none;
+    border: .1rem solid white;
+    color: white;
+    margin: .5rem 0;
+}
+
+.single-control .time-control #time{
+    color: #fff;
+}
+.single-control label p {
+    margin-bottom: 1rem;
+}
+
+.single-control .time-control .plus1:hover,
+.single-control .time-control .minus1:hover{
+    cursor: pointer;
+    text-shadow: 0 0 .5rem var(--sky),
+                0 0 1rem var(--sky),
+                0 0 1.5rem var(--sky);
+}
+
+.single-control .time-control .plus1.passive,
+.single-control .time-control .minus1.passive{
+    opacity: .3;
+}
+
+
+/* --------group control------------ */
+
+
+.menu .group-control{
+    color: var(--violet);
+    display: none;  
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+    overflow: auto;
+    padding: .5rem 0;
+    cursor: var(--violet);
+    font-size: 1.4rem;
+}
+
+.menu .group-control.active{
+    display: flex;
+}
+
+.menu .group-control .players-count{
+    margin: 1rem 0;
+}
+
+
+
+.menu .group-control .players-count span{
+    width: 2rem;
+    height: 1.5rem;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: .5rem;
+    border: .1rem solid var(--light-violet);
+}
+.menu .group-control .players-count span.active{
+    background-color: var(--light-violet);
+}
+
+
+.menu .group-control .player-names input{
+    padding: .5rem;
+    font-size: 1rem;
+    border-radius: .5rem;
+    background: none;
+    border: .1rem solid #fff;
+    color: #fff;
+    margin: .3rem 0;
+}
+
+.inp-show{
+    animation: inpshow .3s ease-out;
+}
+
+@keyframes inpshow {
+    0%{transform: scale(0, 0);}
+    100%{transform: scale(1, 1);}
+}
+
+
+.menu .group-control .dwn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.menu .group-control .dwn .time-control{
+    padding: 1rem .5rem;
+}
+
+
+.group-control .time-control .plus2:hover,
+.group-control .time-control .minus2:hover{
+    cursor: pointer;
+    color: var(--sky);
+    text-shadow: 0 0 1rem var(--violet),
+                0 0 1.5rem var(--violet);
+}
+.group-control .time-control .plus2.passive,
+.group-control .time-control .minus2.passive{
+    cursor: default;
+    opacity: .3;
+}
+
+.menu .group-control .dwn .time-control #time2{
+    color: #fff;
+}
+
+.menu .group-control .btn2{
+    font-size: 1.1rem;
+}
+
+
+
+/* -----------gaming-area----------- */
+
+/* ----------loading bar----------- */
+.gaming-area{
+    display: none;
+    align-items: center;
+    flex-direction: column;
+}
+
+.gaming-area.active{
+    display: flex;
+}
+
+.gaming-area .loading-container{
+    width: 50%;
+    height: 1.5rem;
+    background-color:rgba(0, 0, 0, 0.7);
+    border-radius: .3rem;
+    display: flex;
+    align-items: center;
+    padding: .1rem;
+    animation: loadshow .5s ease-out;
+    -webkit-animation-delay: .5s; /* Chrome, Safari, Opera */
+    animation-delay: .5s;
+    animation-fill-mode: both;
+}
+
+@keyframes loadshow {
+    0%{transform: scaleX(0);}
+    100%{transform: scaleX(1);}
+}
+
+.gaming-area .loading-container .loading-thumb{
+    width: 0%;
+    height: 100%;
+    border-radius: .3rem;
+    background-color: rgba(125, 222, 252, 0.5);
+}
+
+.gaming-area .loading-container .loading-thumb.active{
+    width: 100%;
+}
+
+
+.gaming-area .gaming-content{
+    margin-top: 1rem;
+    width: 50%;
+    height: 40vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    background-color:rgba(0, 0, 0, 0.7);
+    border-radius: .5rem;
+    animation: inpshow .5s ease-out;
+}
+
+.gaming-area .gaming-content .last-city{
+    font-size: 3rem;
+    color: var(--violet);
+    animation: lastcityshow .2s cubic-bezier(.03,.77,.02,1.04) both 1s;
+}
+
+@keyframes lastcityshow {
+    0%{
+        transform: scale(2, 2);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+}
+
+.gaming-area .gaming-content  .player-container{
+    color: var(--light-violet);
+}
+
+.gaming-area .gaming-content .enter-city{
+    width: 50%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    background:none;
+    border: .1rem solid #fff;
+    border-radius: .5rem;
+    color: #fff;
+}
+
+.gaming-area .gaming-content button{
+    background: none;
+    font-size: 3rem;
+    color: var(--sky);
+    cursor: pointer;
+}
+.gaming-area .gaming-content button:hover  i{
+    text-shadow:0 0 1rem var(--sky);
+}
+
+
+/* -------info bar------------ */
+
+
+.gaming-area .info-bar{
+    width: 50%;
+    height: 20vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: .5rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    padding: .5rem;
+    animation: showinfobar .2s cubic-bezier(.03,.77,.02,1.04) both 1.3s;
+}
+
+@keyframes showinfobar {
+    0%{transform: scaleY(0);}
+    100%{transform: scaleY(1);}
+}
+
+
+.gaming-area .info-bar h3{
+    color: var(--sky);
+}
+
+.gaming-area .info-bar .cities-list li{
+    animation: lastcityshow .2s cubic-bezier(.03,.77,.02,1.04) both;
+    color: var(--light-violet);
+    padding: .3rem 0;
+}
+
+
+.gaming-area .info-bar .cities-list{
+    width: 100%;
+    text-align: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: .5rem;
+    margin-top: .5rem;
+    min-height: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+    scroll-behavior: smooth;
+}

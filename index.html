@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Lighting Cities</title>
+</head>
+<body>
+    <audio id="music" autoplay loop>
+        <source src="files/Erg.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="bg-img"></div>
+
+    <header>
+        <span class="copyright">created by suren galoyan</span>
+        <h1 class="logo">Lighting Cities</h1>
+        <div class="controls">
+            <div class="lang">
+                <span class="hy">Հայ</span>
+                <span class="eng active">Eng</span>
+            </div>
+            <i class="btn music-btn fas fa-volume-mute"></i>
+            <i class="btn home-btn fas fa-home"></i>
+        </div>
+    </header>
+
+    <section class="menu">
+        <div class="box1">
+            <i class="fas fa-user"></i>
+            <input id="single" class="btn" type="button" value="1 player">
+        </div>
+
+        <div class="group-control">
+            <div>
+                <p class="players-count" >check player's count</p>
+                <div class="players-count">
+                    <span class="check-count active"></span>
+                    <span class="check-count active"></span>
+                    <span class="check-count"></span>
+                    <span class="check-count"></span>
+                    <span class="check-count"></span>
+                </div>
+            </div>
+            <ul class="player-names">
+                <input type="text" class="inp-show p1" value="player 1">
+                <input type="text" class="inp-show p2" value="player 2">
+            </ul>
+            <div class="dwn">
+                <p class="check-time">check the timeleft</p>
+                <div class="time-control"> 
+                    <span class="plus2">+</span>
+                    <span id="time2">20</span>
+                    <span class="minus2">-</span>
+                </div>
+                <input class="btn2" type="submit" value="start" id="group-start">
+            </div>
+        </div>
+
+        <div class="box2">
+            <i class="fas fa-users"></i>
+            <input id="group" class="btn2" type="button" value="2+ players">
+        </div>
+
+        <div class="single-control">
+            <label for="name"> <span class="your-name">enter your name</span>
+                <input type="text" id="name" value="player">
+            </label>
+            <label>
+                <p class="check-time" >check the timeleft</p>
+                <div class="time-control"> 
+                    <span class="plus1">+</span>
+                    <span id="time">20</span>
+                    <span class="minus1">-</span>
+                </div>
+            </label>
+            <input class="btn" type="submit" value="start" id="single-start">
+        </div>
+        
+    </section>
+
+    <section class="gaming-area">
+        <div class="loading-container">
+            <div class="loading-thumb"></div>
+        </div>
+
+        <div class="gaming-content">
+            <h1 class="last-city">first city</h1>
+            <p class="player-container"></p>
+            <input class="enter-city" type="text" name="" id="">
+            <button id="add-btn" type="submit"><i class="fas fa-angle-double-up"></i></button>
+        </div>
+
+        <div class="info-bar">
+            <h3>Cities list</h3>
+            <ul class="cities-list">
+            </ul>
+        </div>
+    </section>
+    
+
+
+
+    <script src="js/base.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
